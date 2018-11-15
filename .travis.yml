@@ -4,6 +4,7 @@ script: yarn run build
 
 deploy:
   local-dir: dist
+  fqdn: masked.radmen.info
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
