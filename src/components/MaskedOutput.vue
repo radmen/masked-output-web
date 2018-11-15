@@ -5,7 +5,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" v-model.trim="input.password">
         <label for="fields">Fields</label>
-        <input type="text" id="fields" v-model="input.fields">
+        <input type="text" id="fields" v-model="input.fields" placeholder="eg. 1 4 6 8">
       </fieldset>
       <hr/>
     </form>
