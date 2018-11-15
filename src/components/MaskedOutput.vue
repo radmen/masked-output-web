@@ -12,7 +12,7 @@
 
     <template v-if="maskedPassword.length">
       <h2>Your password:</h2>
-      <h3>{{ maskedPassword }}</h3>
+      <h3 class="masked-password">{{ maskedPassword }}</h3>
     </template>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.mask {
-  width: 3rem;
+.masked-password {
+  font-family: 'PT Mono', monospace;
 }
 </style>
