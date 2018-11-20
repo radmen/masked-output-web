@@ -10,8 +10,10 @@
       <hr/>
     </form>
 
-    <template v-if="maskedPassword.length">
-      <h3 class="masked-password">{{ maskedPassword }}</h3>
+    <template v-if="masks.length">
+      <h3 class="masked-password">
+        <span v-for="item in masks" :class="{ fade: item.masked }">{{ item.masked ? '*' : item.char }}</span>
+      </h3>
     </template>
   </div>
 </template>
@@ -36,15 +38,15 @@ export default {
         .filter(str => /^\d+$/.test(str))
     },
 
-    maskedPassword () {
+    masks () {
       const fields = this.fields
       const splitBy = new RegExp('')
 
       return this.input.password.split(splitBy)
-        .map((char, index) => fields.includes(`${index + 1}`)
-            ? char
-            : '*')
-        .join('')
+        .map((char, index) => ({
+          char,
+          masked: !fields.includes(`${index + 1}`)
+        }))
     }
   }
 }
@@ -53,5 +55,9 @@ export default {
 <style scoped>
 .masked-password {
   font-family: 'PT Mono', monospace;
+}
+
+.fade {
+  color: #edeff0;
 }
 </style>
