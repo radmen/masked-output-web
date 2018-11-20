@@ -11,7 +11,6 @@
     </form>
 
     <template v-if="maskedPassword.length">
-      <h2>Your password:</h2>
       <h3 class="masked-password">{{ maskedPassword }}</h3>
     </template>
   </div>
@@ -38,7 +37,13 @@ export default {
     },
 
     maskedPassword () {
-      return this.fields.map(key => this.input.password.substr(key - 1, 1))
+      const fields = this.fields
+      const splitBy = new RegExp('')
+
+      return this.input.password.split(splitBy)
+        .map((char, index) => fields.includes(`${index + 1}`)
+            ? char
+            : '*')
         .join('')
     }
   }
