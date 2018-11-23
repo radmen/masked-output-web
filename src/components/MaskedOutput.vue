@@ -7,10 +7,10 @@
         <label for="fields">Fields</label>
         <input type="text" id="fields" v-model="input.fields" placeholder="eg. 1 4 6 8" autocomplete="off">
       </fieldset>
-      <hr/>
     </form>
 
     <template v-if="masks.length">
+      <hr/>
       <h3 class="masked-password">
         <span v-for="item in masks" :class="{ fade: item.masked }">{{ item.masked ? '*' : item.char }}</span>
       </h3>
