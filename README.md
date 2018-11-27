@@ -24,22 +24,18 @@ yarn run serve
 yarn run build
 ```
 
+### Compiles and hot-reloads electron app
+
+```
+yarn electron:serve
+```
 
 
 
+### Compiles and builds electron app
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+yarn electron:build
+```
 
 

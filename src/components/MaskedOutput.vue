@@ -3,7 +3,7 @@
     <form>
       <fieldset>
         <label for="password">Password</label>
-        <input type="password" id="password" v-model.trim="input.password" autocomplete="off">
+        <input type="password" id="password" v-model.trim="input.password" autocomplete="off" autofocus>
         <label for="fields">Fields</label>
         <input type="text" id="fields" v-model="input.fields" placeholder="eg. 1 4 6 8" autocomplete="off">
       </fieldset>
